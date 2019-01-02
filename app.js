@@ -9,7 +9,7 @@ http.createServer(function(req, res) {
 
   var filePath = '.' + req.url;
   if (filePath == './')
-    filePath = './home.html';
+    filePath = './index.html';
 
   var extname = path.extname(filePath);
   var contentType = 'text/html';
@@ -31,6 +31,9 @@ http.createServer(function(req, res) {
       break;
     case '.wav':
       contentType = 'audio/wav';
+      break;
+    case '.ico':
+      contentType = 'image/x-icon';
       break;
   }
 
